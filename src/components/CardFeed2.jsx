@@ -21,7 +21,7 @@ export default function ActionAreaCard() {
                             </div>
                             <div className='mt-4'>
                                 <Button variant="contained" disableElevation className='m-2'>
-                                    Enviar Localização e Mensagem
+                                    Pedir Carona
                                 </Button>
                             </div>
                         </div>
