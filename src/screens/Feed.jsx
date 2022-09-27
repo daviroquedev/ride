@@ -1,7 +1,6 @@
 import React from 'react'
 import CardPerfil from '../components/cardPerfil'
-import CardFeed from '../components/CardFeed'
-import Maps from '../components/Maps'
+import CardFeed2 from '../components/CardFeed2'
 
 
 
@@ -14,7 +13,7 @@ export default function Feed() {
 
       <div className='flex justify-around '>
         <CardPerfil />
-        <CardFeed/>
+        <CardFeed2  />
       </div>
 
     </div>
