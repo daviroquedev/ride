@@ -1,6 +1,7 @@
 import React from 'react'
 import CardPerfil from '../components/cardPerfil'
 import CardFeed from '../components/CardFeed'
+import Maps from '../components/Maps'
 
 
 
