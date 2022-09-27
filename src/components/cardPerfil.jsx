@@ -5,7 +5,7 @@ import Stack from '@mui/material/Stack';
 
 export default function cardPerfil() {
     return (
-        <div className='flex flex-col items-center bg-[#EEEEEE]'> 
+        <div className='flex flex-col items-center bg-[#EEEEEE] ml-2 mt-2 py-3 px-3'> 
             <Stack direction="row" spacing={2}>
             
             <Avatar
