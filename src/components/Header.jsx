@@ -13,7 +13,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 
 
-const pages = ['Procurando Carona', 'Oferecendo Carona', 'Feed', "Preciso de Ajuda"];
+const pages = ['Feed','Procurando Carona', 'Oferecendo Carona', "Preciso de Ajuda"];
 const settings = ['Profile', 'Account', 'Logout'];
 const logo = 'url"./assets/logo.png"'
 
