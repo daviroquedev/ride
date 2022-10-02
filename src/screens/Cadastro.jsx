@@ -72,7 +72,7 @@ export default function Cadastro() {
                                 <input type="text" value={name} required onChange={(e) => { handleChange(e) }} className="bg-[#08B5CE] w-96 h-12 mb-2 font-bold p-2 text-white placeholder-[#AFD9FF] rounded-[10px]" placeholder='Digite seu Nome' />
                                 { /*when user write in name input box , handleChange()
                   function will be called. */}
-                                <input type="text" value={matricula} required onChange={(e) => { handleAgeChange(e) }} className="bg-[#08B5CE] mb-2 w-96 h-12 font-bold p-2 text-white placeholder-[#AFD9FF] rounded-[10px]" placeholder='Qual sua matricula Uninassau' />
+                                <input type="text" value={matricula} required onChange={(e) => { handleAgeChange(e) }} className="bg-[#08B5CE] mb-2 w-96 h-12 font-bold p-2 text-white placeholder-[#AFD9FF] rounded-[10px]" placeholder='Digite sua matricula Uninassau' />
                                 { /*when user write in name input box , handleChange()
                   function will be called. */}
                                 <input type="email" value={email} required onChange={(e) => { handleEmailChange(e) }} className="bg-[#08B5CE] mb-2 w-96 h-12 font-bold p-2 text-white placeholder-[#AFD9FF] rounded-[10px]" placeholder='Digite seu email' />
