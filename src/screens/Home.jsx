@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
 import HeaderLogout from '../components/HeaderLogout'
-import logo from '../assets/logo.png'
+import Logo from '../components/Logo'
 
 
 export default function Home() {
@@ -19,9 +20,7 @@ export default function Home() {
         <div>
             <HeaderLogout />
             <div className='flex justify-center items-center p-10  mt-40' >
-                <div className='mr-10'>
-                    <img src={logo} className="max-w-md" />
-                </div>
+                <Logo />
                 <div className='flex flex-col'>
                     <div className='ml-4  flex flex-col justify-center'>
                         <h3 className='text-[#08B5CE] text-4xl font-bold mb-3'> Acesse seu perfil </h3>
@@ -29,13 +28,17 @@ export default function Home() {
                         <input type="password" value={password} required onChange={(e) => { handlePasswordChange(e) }} className="bg-[#08B5CE] mb-3 w-96 h-12 font-bold p-2 text-white  placeholder-[#AFD9FF] rounded-[10px]" placeholder='Digite sua senha' />
                     </div>
                     <div className='flex justify-around'>
-                        <a href='/cadastro'>
-                            <input type="button" value="Cadastre-se" className='bg-[#08B5CE]  font-bold w-40 h-10 text-[#FFFFFF] rounded-[10px]' />
-                        </a>
-                        <a href="/feed">
-                            <input type="button" value="Entrar" className='bg-[#08B5CE]  font-bold w-40 h-10 text-[#FFFFFF] rounded-[10px]' />
-                        </a>
-
+                        <Link to='/cadastro'>
+                            <input type="button" value="Cadastre-se" className='bg-[#08B5CE]  font-bold w-40 h-10 text-[#FFFFFF] rounded-[10px] cursor-pointer' />
+                        </Link>
+                        <Link to="/feed">
+                            <input type="button" value="Entrar" className='bg-[#08B5CE]  font-bold w-40 h-10 text-[#FFFFFF] rounded-[10px] cursor-pointer' />
+                        </Link>
+                    </div>
+                    <div className='flex justify-center mt-4'>
+                        <Link to="/">
+                            <h3 className='text-[#385bf8] underline p-1'>Preciso de ajuda</h3>
+                        </Link>
                     </div>
                 </div>
             </div>

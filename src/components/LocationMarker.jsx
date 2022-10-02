@@ -39,12 +39,12 @@ export default function LocationMarker() {
          draggable={draggable}
          eventHandlers={eventHandlers}
          ref={markerRef}
-         
+
          >
-            <Popup><span onClick={toggleDraggable}>
+            <Popup className=''><span onClick={toggleDraggable}>
           {draggable
-            ? 'Arraste para posicionar seu local'
-            : 'Clique AQUI! Para posicionar com precisão seu local.'}
+            ? 'Arraste o marcador para a sua posição'
+            : 'Clique aqui e depois arraste o marcador para a sua posição.'}
             {console.log(position)}
 
         </span></Popup>

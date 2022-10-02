@@ -1,7 +1,8 @@
 
 import React, { useState } from 'react'
-import logo from '../assets/logo.png'
+import Logo from '../components/Logo'
 import HeaderLogout from '../components/HeaderLogout';
+import { Link } from 'react-router-dom';
 
 
 
@@ -65,11 +66,9 @@ export default function Cadastro() {
                         {/*when user submit the form , handleSubmit() 
             function will be called .*/}
                         <div className='flex justify-center items-center p-10'>
-                            <div className='mr-10'>
-                                <img src={logo} className="max-w-md" />
-                            </div>
+                            <Logo />
                             <div className='ml-4  flex flex-col justify-center'>
-                                <h3 className='text-[#08B5CE] text-4xl font-bold mb-4'> CADASTRAR </h3>
+                                <h3 className='text-[#08B5CE] text-4xl font-bold mb-4'> CADASTRE-SE </h3>
                                 <input type="text" value={name} required onChange={(e) => { handleChange(e) }} className="bg-[#08B5CE] w-96 h-12 mb-2 font-bold p-2 text-white placeholder-[#AFD9FF] rounded-[10px]" placeholder='Digite seu Nome' />
                                 { /*when user write in name input box , handleChange()
                   function will be called. */}
@@ -87,10 +86,10 @@ export default function Cadastro() {
                                 {/* when user write in confirm password  input box ,
                         handleConfPasswordChange() function will be called.*/}
                                 <div className='flex justify-around'>
-                                    <input type="submit" value="Cadastrar" className='bg-[#08B5CE] font-bold w-40 h-10 text-[#FFFFFF] rounded-[10px]' />
-                                    <a href="/home">
-                                        <input type="button" value="Voltar" className='bg-[#08B5CE] font-bold w-40 h-10 text-[#FFFFFF] rounded-[10px]' />
-                                    </a>
+                                    <input type="submit" value="Cadastrar" className='bg-[#08B5CE] font-bold w-40 h-10 text-[#FFFFFF] rounded-[10px] cursor-pointer' />
+                                    <Link to="/">
+                                        <input type="button" value="Voltar" className='bg-[#08B5CE] font-bold w-40 h-10 text-[#FFFFFF] rounded-[10px] cursor-pointer' />
+                                    </Link>
                                 </div>
                             </div>
                         </div>

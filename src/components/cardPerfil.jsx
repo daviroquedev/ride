@@ -6,6 +6,7 @@ import CardContent from '@mui/material/CardContent';
 
 
 
+
 export default function cardPerfil() {
     return (
         <Card>
