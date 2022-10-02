@@ -37,7 +37,7 @@ const Header = () => {
     };
 
     return (
-        <AppBar position="static">
+        <AppBar position="static"  style={{ background: '#08B5CE' }}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <Typography
@@ -51,10 +51,11 @@ const Header = () => {
                             fontFamily: 'monospace',
                             fontWeight: 700,
                             letterSpacing: '.3rem',
-                            color: 'inherit',
+                            color: 'white',
                             textDecoration: 'none',
                         }}
                     >
+                        
                         GIVEMEARIDE
                     </Typography>
 
