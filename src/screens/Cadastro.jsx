@@ -1,16 +1,14 @@
 
 import React, { useState } from 'react'
 import logo from '../assets/logo.png'
-import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
+import HeaderLogout from '../components/HeaderLogout';
+
 
 
 export default function Cadastro() {
 
     const [name, setName] = useState('');
-    const [age, setAge] = useState('');
+    const [matricula, setMatricula] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confPassword, setConfPassword] = useState('');
@@ -20,10 +18,10 @@ export default function Cadastro() {
     const handleChange = (e) => {
         setName(e.target.value);
     }
-    // function to update state of age with value 
+    // function to update state of matricula with value 
     // enter by user in form
     const handleAgeChange = (e) => {
-        setAge(e.target.value);
+        setMatricula(e.target.value);
     }
     // function to update state of email with value
     // enter by user in form
@@ -52,7 +50,7 @@ export default function Cadastro() {
             // display alert box with user 
             // 'name' and 'email' deatils .
             alert('A form was submitted with Name :"' + name +
-                '" ,Age :"' + age + '" and Email :"' + email + '"');
+                '" ,matricula :"' + matricula + '" and Email :"' + email + '"');
         }
         e.preventDefault();
 
@@ -60,29 +58,7 @@ export default function Cadastro() {
 
     return (
         <div>
-            <AppBar position="static" style={{ background: '#08B5CE' }}>
-            <Container maxWidth="xl">
-                <Toolbar disableGutters>
-                    <Typography
-                        variant="h6"
-                        noWrap
-                        component="a"
-                        href="/"
-                        sx={{
-                            mr: 2,
-                            display: { xs: 'none', md: 'flex' },
-                            fontFamily: 'monospace',
-                            fontWeight: 700,
-                            letterSpacing: '.3rem',
-                            color: 'white',
-                            textDecoration: 'none',
-                        }}
-                    >
-                        GIVEMEARIDE
-                    </Typography>
-                </Toolbar>
-            </Container>
-            </AppBar>
+            <HeaderLogout />
             <div className="flex justify-center mt-40 bg-[#EEEEEE] h-full w-full">
                 <header className="flex-col flex items-center justify-center w-full h-full center">
                     <form onSubmit={(e) => { handleSubmit(e) }}>
@@ -93,26 +69,28 @@ export default function Cadastro() {
                                 <img src={logo} className="max-w-md" />
                             </div>
                             <div className='ml-4  flex flex-col justify-center'>
-                                <h3 className='text-[#08B5CE] text-4xl font-bold mb-3'> CADASTRAR </h3>
-                                <input type="text" value={name} required onChange={(e) => { handleChange(e) }} className="bg-[#08B5CE] w-96 h-12 font-bold p-2 text-white placeholder-[#AFD9FF] rounded-[10px]" placeholder='Digite seu Nome' /><br />
+                                <h3 className='text-[#08B5CE] text-4xl font-bold mb-4'> CADASTRAR </h3>
+                                <input type="text" value={name} required onChange={(e) => { handleChange(e) }} className="bg-[#08B5CE] w-96 h-12 mb-2 font-bold p-2 text-white placeholder-[#AFD9FF] rounded-[10px]" placeholder='Digite seu Nome' />
                                 { /*when user write in name input box , handleChange()
                   function will be called. */}
-                                <input type="text" value={age} required onChange={(e) => { handleAgeChange(e) }} className="bg-[#08B5CE] w-96 h-12 font-bold p-2 text-white placeholder-[#AFD9FF] rounded-[10px]" placeholder='Qual sua matricula Uninassau' /><br />
-                                { /*when user write in age input box , handleAgeChange()
-                   function will be called. */}
-                                <input type="email" value={email} required onChange={(e) => { handleEmailChange(e) }} className="bg-[#08B5CE] w-96 h-12 font-bold p-2 text-white placeholder-[#AFD9FF] rounded-[10px]" placeholder='Digite seu email' /><br />
+                                <input type="text" value={matricula} required onChange={(e) => { handleAgeChange(e) }} className="bg-[#08B5CE] mb-2 w-96 h-12 font-bold p-2 text-white placeholder-[#AFD9FF] rounded-[10px]" placeholder='Qual sua matricula Uninassau' />
+                                { /*when user write in name input box , handleChange()
+                  function will be called. */}
+                                <input type="email" value={email} required onChange={(e) => { handleEmailChange(e) }} className="bg-[#08B5CE] mb-2 w-96 h-12 font-bold p-2 text-white placeholder-[#AFD9FF] rounded-[10px]" placeholder='Digite seu email' />
                                 {/* when user write in email input box , handleEmailChange() 
                   function will be called.*/}
-                                <input type="password" value={password} required onChange={(e) => { handlePasswordChange(e) }} className="bg-[#08B5CE] w-96 h-12 font-bold p-2 text-white  placeholder-[#AFD9FF] rounded-[10px]" placeholder='Digite sua senha' /><br />
+                                <input type="password" value={password} required onChange={(e) => { handlePasswordChange(e) }} className="bg-[#08B5CE] mb-2 w-96 h-12 font-bold p-2 text-white  placeholder-[#AFD9FF] rounded-[10px]" placeholder='Digite sua senha' />
                                 {/* when user write in password input box ,
                       handlePasswordChange() function will be called.*/}
 
-                                <input type="password" value={confPassword} required onChange={(e) => { handleConfPasswordChange(e) }} className="bg-[#08B5CE] w-96 h-12 font-bold p-2 text-white placeholder-[#AFD9FF] rounded-[10px]" placeholder='Confirme seu senha' /><br />
+                                <input type="password" value={confPassword} required onChange={(e) => { handleConfPasswordChange(e) }} className="bg-[#08B5CE] mb-2 w-96 h-12 font-bold p-2 text-white placeholder-[#AFD9FF] rounded-[10px]" placeholder='Confirme seu senha' />
                                 {/* when user write in confirm password  input box ,
                         handleConfPasswordChange() function will be called.*/}
                                 <div className='flex justify-around'>
                                     <input type="submit" value="Cadastrar" className='bg-[#08B5CE] font-bold w-40 h-10 text-[#FFFFFF] rounded-[10px]' />
-                                    <input type="button" value="Voltar" className='bg-[#08B5CE] font-bold w-40 h-10 text-[#FFFFFF] rounded-[10px]' />
+                                    <a href="/home">
+                                        <input type="button" value="Voltar" className='bg-[#08B5CE] font-bold w-40 h-10 text-[#FFFFFF] rounded-[10px]' />
+                                    </a>
                                 </div>
                             </div>
                         </div>
