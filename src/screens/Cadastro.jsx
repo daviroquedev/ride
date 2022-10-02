@@ -49,8 +49,8 @@ export default function Cadastro() {
         else {
             // display alert box with user 
             // 'name' and 'email' deatils .
-            alert('A form was submitted with Name :"' + name +
-                '" ,matricula :"' + matricula + '" and Email :"' + email + '"');
+            alert('O formulario foi enviado com  Nome :"' + name +
+                '" ,matricula :"' + matricula + '" e Email :"' + email + '"');
         }
         e.preventDefault();
 
