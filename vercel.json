@@ -1,0 +1,7 @@
+{
+    "rewrites":  [
+      {"source": "/", "destination": "/"},
+      {"source": "/feed", "destination": "/"},
+      {"source": "/cadastro", "destination": "/"}
+    ]
+  }
