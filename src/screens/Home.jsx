@@ -18,7 +18,7 @@ export default function Home() {
     return (
         <div>
             <HeaderLogout />
-            <div className='flex justify-center items-center p-10'>
+            <div className='flex justify-center items-center p-10  mt-40' >
                 <div className='mr-10'>
                     <img src={logo} className="max-w-md" />
                 </div>
