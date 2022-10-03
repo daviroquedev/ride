@@ -2,7 +2,11 @@
 https://ridesocial.vercel.app/
 
 ## Rede Social de Caronas Universitárias 
-<p>Projeto em contrução</p>
+<p>Projeto em contrução desenvolvido em React</p>
+<p>Mapas com Leaflet e React Leaflet |</p>
+<p>Geolocalização</p>
+<p>Material-UI</p>
+<p>TailwindCSS</p>
 
 
 ## Pra Rodar
