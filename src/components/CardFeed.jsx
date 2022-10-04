@@ -20,7 +20,7 @@ export default function ActionAreaCard() {
                             <Maps />
                         </div>
                         <div className='mt-4'>
-                            <button class="bg-[#08B5CE] hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                            <button className="bg-[#08B5CE] hover:bg-[#19e0fe] text-white font-bold py-2 px-4 rounded">
                                 Pedir Carona
                             </button>
                         </div>

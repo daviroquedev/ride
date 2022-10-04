@@ -16,7 +16,6 @@ import { Link } from 'react-router-dom';
 
 const pages = ['Feed', 'Procurando Carona', 'Oferecendo Carona', "Preciso de Ajuda"];
 const settings = ['Profile', 'Account', 'Logout'];
-const logo = 'url"./assets/logo.png"'
 
 const Header = () => {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -41,26 +40,26 @@ const Header = () => {
         <AppBar position="static" style={{ background: '#08B5CE' }}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
-                    <Link to="/">
-                        <Typography
-                            variant="h6"
-                            noWrap
-                            component="a"
-                            href="/"
-                            sx={{
-                                mr: 2,
-                                display: { xs: 'none', md: 'flex' },
-                                fontFamily: 'monospace',
-                                fontWeight: 700,
-                                letterSpacing: '.3rem',
-                                color: 'white',
-                                textDecoration: 'none',
-                            }}
-                        >
 
-                            GIVEMEARIDE
-                        </Typography>
-                    </Link>
+                    <Typography
+                        variant="h6"
+                        noWrap
+                        component="a"
+                        href="/"
+                        sx={{
+                            mr: 2,
+                            display: { xs: 'none', md: 'flex' },
+                            fontFamily: 'monospace',
+                            fontWeight: 700,
+                            letterSpacing: '.3rem',
+                            color: 'white',
+                            textDecoration: 'none',
+                        }}
+                    >
+
+                        GIVEMEARIDE
+                    </Typography>
+
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
                         <IconButton
@@ -132,7 +131,7 @@ const Header = () => {
                     <Box sx={{ flexGrow: 0 }}>
                         <Tooltip title="Open settings">
                             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                                <Avatar alt="Davi Roque" src="/static/images/avatar/2.jpg" />
                             </IconButton>
                         </Tooltip>
                         <Menu

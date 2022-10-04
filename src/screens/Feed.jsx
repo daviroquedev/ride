@@ -12,7 +12,7 @@ export default function Feed() {
   return (
     <div>
       <Header/>
-      <div className='flex justify-around '>
+      <div className='flex justify-around mt-3'>
         <CardPerfil />
         <CardFeed  />
       </div>

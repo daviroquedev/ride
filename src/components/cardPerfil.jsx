@@ -15,7 +15,7 @@ export default function cardPerfil() {
                     <Stack direction="row" spacing={2}>
 
                         <Avatar
-                            alt="Remy Sharp"
+                            alt="Davi Roque"
                             src="/static/images/avatar/1.jpg"
                             sx={{ width: 156, height: 156 }}
                         />

@@ -10,11 +10,12 @@ export default function HeaderLogout() {
         <AppBar position="static" style={{ background: '#08B5CE' }}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
-                    <Link to="/">
+                 
                         <Typography
                             variant="h6"
                             noWrap
                             component="a"
+                            href="/"
                             sx={{
                                 mr: 2,
                                 display: { xs: 'none', md: 'flex' },
@@ -27,7 +28,7 @@ export default function HeaderLogout() {
                         >
                             GIVEMEARIDE
                         </Typography>
-                    </Link>
+               
                 </Toolbar>
             </Container>
         </AppBar>
