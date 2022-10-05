@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
-import {useState} from 'react';
+import { useState } from 'react';
+import ModalTerms from './ModalTerms'
+
 
 export default function Checkbox() {
 
@@ -17,16 +19,20 @@ export default function Checkbox() {
   return (
     <div className="flex items-center m-2">
       <label className=" text-sm font-medium text-gray-900 dark:text-gray-300">
-        <input
-          type="checkbox"
-          value={checkbox}
-          onChange={handleChange}
-          id="link-checkbox"
-          name="link-checkbox"
-          className="w-4 h-4 mb-2 mr-2 text-[#08B5CE] bg-gray-100 rounded border-gray-300 focus:ring-[#19e0fe] dark:focus:ring-red-900 dark:ring-offset-[gray-800] focus:ring-2 dark:bg-[#19e0fe] dark:border-[#19e0fe]" 
-        />
-        Eu declaro que li e aceito os <Link to="/" className="text-[#08B5CE] dark:text-blue-500 hover:underline">termos e condições</Link>
+        <div className='flex whitespace-nowrap m-2'>
+          <input
+            type="checkbox"
+            value={checkbox}
+            onChange={handleChange}
+            id="link-checkbox"
+            name="link-checkbox"
+            className="w-4 h-4 mb-2 mr-2 text-[#08B5CE] bg-gray-100 rounded border-gray-300 focus:ring-[#19e0fe] dark:focus:ring-red-900 dark:ring-offset-[gray-800] focus:ring-2 dark:bg-[#19e0fe] dark:border-[#19e0fe]"
+          />
+          Eu declaro que li e aceito os  <ModalTerms/>
+          {/* <Link to="/" className="text-[#08B5CE] dark:text-blue-500 hover:underline">termos e condições<ModalTerms></ModalTerms></Link> */}
+        </div>
       </label>
+
     </div>
   );
 }

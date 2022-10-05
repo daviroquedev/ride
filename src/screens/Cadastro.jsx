@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 import Checkbox from '../components/Checkbox';
 
 
-
 export default function Cadastro() {
 
     const [name, setName] = useState('');
