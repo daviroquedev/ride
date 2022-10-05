@@ -23,7 +23,7 @@ export default function Cadastro() {
     }
     // function to update state of matricula with value 
     // enter by user in form
-    const handleAgeChange = (e) => {
+    const handleMatriculaChange = (e) => {
         setMatricula(e.target.value);
     }
     // function to update state of email with value
@@ -74,7 +74,7 @@ export default function Cadastro() {
                                 <input type="text" value={name} required onChange={(e) => { handleChange(e) }} className="bg-[#08B5CE] w-96 h-12 mb-2 font-bold p-2 text-white placeholder-[#AFD9FF] rounded-[10px]" placeholder='Digite seu Nome' />
                                 { /*when user write in name input box , handleChange()
                   function will be called. */}
-                                <input type="text" value={matricula} required onChange={(e) => { handleAgeChange(e) }} className="bg-[#08B5CE] mb-2 w-96 h-12 font-bold p-2 text-white placeholder-[#AFD9FF] rounded-[10px]" placeholder='Digite sua matricula Uninassau' />
+                                <input type="text" value={matricula} required onChange={(e) => { handleMatriculaChange(e) }} className="bg-[#08B5CE] mb-2 w-96 h-12 font-bold p-2 text-white placeholder-[#AFD9FF] rounded-[10px]" placeholder='Digite sua matricula Uninassau' />
                                 { /*when user write in name input box , handleChange()
                   function will be called. */}
                                 <input type="email" value={email} required onChange={(e) => { handleEmailChange(e) }} className="bg-[#08B5CE] mb-2 w-96 h-12 font-bold p-2 text-white placeholder-[#AFD9FF] rounded-[10px]" placeholder='Digite seu email' />
@@ -84,7 +84,7 @@ export default function Cadastro() {
                                 {/* when user write in password input box ,
                       handlePasswordChange() function will be called.*/}
 
-                                <input type="password" value={confPassword} required onChange={(e) => { handleConfPasswordChange(e) }} className="bg-[#08B5CE] mb-2 w-96 h-12 font-bold p-2 text-white placeholder-[#AFD9FF] rounded-[10px]" placeholder='Confirme seu senha' />
+                                <input type="password" value={confPassword} required onChange={(e) => { handleConfPasswordChange(e) }} className="bg-[#08B5CE] mb-2 w-96 h-12 font-bold p-2 text-white placeholder-[#AFD9FF] rounded-[10px]" placeholder='Confirme sua senha' />
                                 {/* when user write in confirm password  input box ,
                         handleConfPasswordChange() function will be called.*/}
                                 {/* <Link className='flex justify-end m-3'> */}
