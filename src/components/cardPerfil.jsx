@@ -21,7 +21,7 @@ export default function CardPerfil() {
                         />
                     </Stack>
                     <p className="font-semibold">Davi Roque</p>
-                    <p className="font-semibold">Análise e desenvolvimento de sistemas</p>
+                    <p className="font-semibold">Analise e desenvolvimento de sistemas</p>
                     <p className="font-semibold">016997-3</p>
                 </div>
             </CardContent>

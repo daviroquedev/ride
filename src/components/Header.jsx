@@ -15,19 +15,19 @@ import { Link } from 'react-router-dom';
 
 
 const pages = [{
-    page:'Feed',
+    page: 'Feed',
     link: '/feed',
 },
 {
-    page:'Enviar Post',
+    page: 'Enviar Post',
     link: '/sendpost',
 },
 {
-    page:'Oferecendo Carona',
+    page: 'Oferecendo Carona',
     link: '/',
 },
 {
-    page:'Ajuda',
+    page: 'Ajuda',
     link: '/',
 }
 ];
@@ -135,13 +135,15 @@ const Header = () => {
                     </Typography>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page) => (
-                            <Button
-                                key={page.page}
-                                onClick={handleCloseNavMenu}
-                                sx={{ my: 2, color: 'white', display: 'block' }}
-                            >
-                               <Link to={page.link}>{page.page}</Link>
-                            </Button>
+                            <Link to={page.link}>
+                                <Button
+                                    key={page.page}
+                                    onClick={handleCloseNavMenu}
+                                    sx={{ my: 2, color: 'white', display: 'block' }}
+                                >
+                                    {page.page}
+                                </Button>
+                            </Link>
                         ))}
                     </Box>
 

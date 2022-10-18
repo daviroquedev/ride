@@ -4,7 +4,6 @@ import CardFeedPost from '../components/CardFeedPost'
 import Header from '../components/Header'
 
 
-
 export default function FeedPost() {
 
 
