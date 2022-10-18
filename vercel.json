@@ -1,9 +1,9 @@
 {
     "rewrites":  [
       {"source": "/", "destination": "/"},
-      {"source": "/procurando_carona", "destination": "/"},
       {"source": "/cadastro", "destination": "/"},
       {"source": "/home", "destination": "/"},
-      {"source": "/feed", "destination": "/"}
+      {"source": "/feed", "destination": "/"},
+      {"source": "/post", "destination": "/"}
     ]
   }
