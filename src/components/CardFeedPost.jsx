@@ -4,7 +4,7 @@ import CardContent from '@mui/material/CardContent';
 import Maps from './Maps'
 
 
-export default function ActionAreaCard() {
+export default function CardFeedPost() {
     return (
         <Card sx={{ width: 1500 }}>
             <CardContent>

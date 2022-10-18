@@ -34,7 +34,7 @@ function Feed() {
             },
             title: "ofereco carona",
             date: "26/08/2022",
-            description: "esse é a descrooição",
+            description: "esse é a descrção",
             hastags: "#carona",
             image: "image"
         },

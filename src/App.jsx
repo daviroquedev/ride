@@ -14,7 +14,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/cadastro" element={<Cadastro/>} />
-        <Route path="/post" element={<FeedPost/>} />
+        <Route path="/sendpost" element={<FeedPost/>} />
         <Route path="/home" element={<Home/>}/>
         <Route path="/feed" element={<Feed/>}/>
       </Routes>

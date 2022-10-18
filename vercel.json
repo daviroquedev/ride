@@ -4,6 +4,6 @@
       {"source": "/cadastro", "destination": "/"},
       {"source": "/home", "destination": "/"},
       {"source": "/feed", "destination": "/"},
-      {"source": "/post", "destination": "/"}
+      {"source": "/sendpost", "destination": "/"}
     ]
   }

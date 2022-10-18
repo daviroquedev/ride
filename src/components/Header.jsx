@@ -14,7 +14,24 @@ import MenuItem from '@mui/material/MenuItem';
 import { Link } from 'react-router-dom';
 
 
-const pages = ['Feed', 'Procurando Carona', 'Oferecendo Carona', "Preciso de Ajuda"];
+const pages = [{
+    page:'Feed',
+    link: '/feed',
+},
+{
+    page:'Enviar Post',
+    link: '/sendpost',
+},
+{
+    page:'Oferecendo Carona',
+    link: '/',
+},
+{
+    page:'Ajuda',
+    link: '/',
+}
+];
+
 const settings = ['Profile', 'Account', 'Logout'];
 
 const Header = () => {
@@ -91,8 +108,8 @@ const Header = () => {
                             }}
                         >
                             {pages.map((page) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography textAlign="center">{page}</Typography>
+                                <MenuItem key={page.page} onClick={handleCloseNavMenu}>
+                                    <Typography textAlign="center"><Link to={page.link}>{page.page}</Link></Typography>
                                 </MenuItem>
                             ))}
                         </Menu>
@@ -119,11 +136,11 @@ const Header = () => {
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page) => (
                             <Button
-                                key={page}
+                                key={page.page}
                                 onClick={handleCloseNavMenu}
                                 sx={{ my: 2, color: 'white', display: 'block' }}
                             >
-                                {page}
+                               <Link to={page.link}>{page.page}</Link>
                             </Button>
                         ))}
                     </Box>
