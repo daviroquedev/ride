@@ -19,23 +19,38 @@ function Feed() {
             },
             title: "Procuro carona",
             date: "26/08/2022",
-            description: "esse é a descrição",
+            description: "Preciso de carona agora para a uninassau...",
             hastags: "#carona",
             image: "image"
         },
         {
             id: 2,
             author: {
-                id: 1,
-                name: 'larissa',
+                id: 2,
+                name: 'Larissa Santos',
                 username: 'laridev',
                 avatar: 'img',
                 curso: "enfermagem"
             },
             title: "ofereco carona",
             date: "26/08/2022",
-            description: "esse é a descrção",
-            hastags: "#carona",
+            description: "Ofereço carona agora...",
+            hastags: "#nassau",
+            image: "image"
+        },
+        {
+            id: 3,
+            author: {
+                id: 3,
+                name: 'Larissa Santos',
+                username: 'laridev',
+                avatar: 'img',
+                curso: "enfermagem"
+            },
+            title: "Engarrafamento",
+            date: "26/08/2022",
+            description: "Esta tudo engarrafado...",
+            hastags: "#nassau",
             image: "image"
         },
     ]
@@ -44,9 +59,9 @@ function Feed() {
     return (
         <div>
             <Header />
-            <div className='flex mt-3'>
+            <div className='flex justify-around mt-2'>
                 <CardPerfil/>
-                <div className="flex flex-col m-1">
+                <div className="flex flex-col ">
                 {
                     posts.map((post) => (
                         <CardFeed hastags={post.hastags} name={post.author.name} description={post.description} key={post.id} />

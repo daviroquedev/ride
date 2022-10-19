@@ -19,7 +19,7 @@ const pages = [{
     link: '/feed',
 },
 {
-    page: 'Enviar Post',
+    page: 'Procurar Carona',
     link: '/sendpost',
 },
 {
