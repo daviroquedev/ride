@@ -2,7 +2,7 @@
 import React from 'react'
 import CardFeed from '../components/CardFeed'
 import Header from '../components/Header'
-import CardPerfil from '../components/CardPerfil'
+import CardPerfil from '../components/cardPerfil'
 
 
 function Feed() {
