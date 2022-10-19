@@ -1,9 +1,10 @@
-
 import React from 'react'
 import CardFeed from '../components/CardFeed'
 import Header from '../components/Header'
 import CardPerfil from '../components/cardPerfil'
-
+import Andre from '../assets/andre.jpg'
+import Mulher from '../assets/mulher.jpg'
+import Saullo from '../assets/saullo.jpg'
 
 function Feed() {
 
@@ -14,7 +15,7 @@ function Feed() {
                 id: 1,
                 name: 'Davi Roque',
                 username: 'daviroquedev',
-                avatar: 'img',
+                avatar: Saullo,
                 curso: "ADS"
             },
             title: "Procuro carona",
@@ -29,7 +30,7 @@ function Feed() {
                 id: 2,
                 name: 'Larissa Santos',
                 username: 'laridev',
-                avatar: 'img',
+                avatar: Mulher,
                 curso: "enfermagem"
             },
             title: "ofereco carona",
@@ -42,17 +43,33 @@ function Feed() {
             id: 3,
             author: {
                 id: 3,
-                name: 'Larissa Santos',
-                username: 'laridev',
-                avatar: 'img',
-                curso: "enfermagem"
+                name: 'Andre Ba',
+                username: 'andredev',
+                avatar: Andre,
+                curso: "ads"
             },
-            title: "Engarrafamento",
+            title: "transito....",
             date: "26/08/2022",
             description: "Esta tudo engarrafado...",
             hastags: "#nassau",
             image: "image"
+        },      
+        {
+            id: 4,
+            author: {
+                id: 1,
+                name: 'Davi Roque',
+                username: 'daviroquedev',
+                avatar: Saullo,
+                curso: "ADS"
+            },
+            title: "Bora la..",
+            date: "26/08/2022",
+            description: "testetes...",
+            hastags: "#jajaja",
+            image: "image"
         },
+      
     ]
 
 
@@ -64,7 +81,7 @@ function Feed() {
                 <div className="flex flex-col ">
                 {
                     posts.map((post) => (
-                        <CardFeed hastags={post.hastags} name={post.author.name} description={post.description} key={post.id} />
+                        <CardFeed hastags={post.hastags} name={post.author.name} description={post.description} key={post.id} avatar={post.author.avatar}/>
                     ))
                 }
                 </div>
