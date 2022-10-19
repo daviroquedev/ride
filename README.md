@@ -5,6 +5,15 @@
   <li>Geolocalização</li>
   <li>Material-UI</li>
   <li>TailwindCSS</li>
+  <li>React Router Dom</li>
+  
+</ul>
+
+## Features
+<ul>
+  <li>Tela Feed</li>
+  <li>Responsividade</li>
+  <li>Backend</li>
 </ul>
 
 ## Link
