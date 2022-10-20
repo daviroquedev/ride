@@ -5,6 +5,7 @@ import CardPerfil from '../components/cardPerfil'
 import Andre from '../assets/andre.jpg'
 import Mulher from '../assets/mulher.jpg'
 import Saullo from '../assets/saullo.jpg'
+import Davi from '../assets/davi.jpg'
 
 function Feed() {
 
@@ -15,7 +16,7 @@ function Feed() {
                 id: 1,
                 name: 'Davi Roque',
                 username: 'daviroquedev',
-                avatar: Saullo,
+                avatar: Davi,
                 curso: "ADS"
             },
             title: "Procuro carona",
@@ -57,9 +58,9 @@ function Feed() {
         {
             id: 4,
             author: {
-                id: 1,
-                name: 'Davi Roque',
-                username: 'daviroquedev',
+                id: 4,
+                name: 'Saullo',
+                username: 'saullo',
                 avatar: Saullo,
                 curso: "ADS"
             },
@@ -77,7 +78,7 @@ function Feed() {
         <div>
             <Header />
             <div className='flex justify-around mt-2'>
-                <CardPerfil/>
+                <CardPerfil />
                 <div className="flex flex-col ">
                 {
                     posts.map((post) => (

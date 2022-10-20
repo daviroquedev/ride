@@ -3,11 +3,12 @@ import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
+import Davi from '../assets/davi.jpg'
 
 
 
 
-export default function CardPerfil() {
+export default function CardPerfil(avatar) {
     
     return (
         <Card>
@@ -17,7 +18,7 @@ export default function CardPerfil() {
 
                         <Avatar
                             alt="Davi Roque"
-                            src="/static/images/avatar/1.jpg"
+                            src={Davi}
                             sx={{ width: 156, height: 156 }}
                         />
                     </Stack>

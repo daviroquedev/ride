@@ -5,8 +5,18 @@ import Cadastro from './screens/Cadastro'
 import Home from './screens/Home'
 import Feed from './screens/Feed'
 
+import api from './Api';
+import axios from 'axios';
+import { useEffect } from 'react'
+import { ApiOutlined } from '@mui/icons-material'
 
 export default function App() {
+
+  useEffect(()=>{
+    api.get('sendpost').then(res=>{
+      console.log(res.data);
+    })
+  },[])
 
 
   return (
