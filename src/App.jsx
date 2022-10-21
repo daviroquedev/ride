@@ -13,10 +13,12 @@ import { ApiOutlined } from '@mui/icons-material'
 export default function App() {
 
   useEffect(()=>{
-    api.get('sendpost').then(res=>{
+    api.get('/').then(res=>{
       console.log(res.data);
     })
   },[])
+
+  
 
 
   return (
