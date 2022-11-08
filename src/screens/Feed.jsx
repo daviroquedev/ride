@@ -76,7 +76,7 @@ function Feed() {
 
     return (
         <div>
-            <Header />
+            {/* <Header /> */}
             <div className='flex justify-around mt-2'>
                 <CardPerfil />
                 <div className="flex flex-col ">

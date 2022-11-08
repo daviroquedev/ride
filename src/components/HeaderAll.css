@@ -1,0 +1,23 @@
+#nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: #08B5CE;
+    border-bottom: 1px solid #3363636;
+    padding: 1em 1em;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+#nav-links {
+    display: flex;
+    align-items: center;
+}
+
+#nav-links li {
+    margin-right: 1em;
+}
+
+#nav-links span {
+    cursor: pointer;
+}

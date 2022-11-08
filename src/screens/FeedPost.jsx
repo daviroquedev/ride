@@ -10,7 +10,7 @@ export default function FeedPost() {
 
   return (
     <div>
-      <Header/>
+      {/* <Header/> */}
       <div className='flex justify-around mt-3'>
         <CardPerfil/>
         <CardFeedPost/>

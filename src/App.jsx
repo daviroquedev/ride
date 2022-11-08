@@ -7,6 +7,8 @@ import Feed from './screens/Feed'
 
 //hooks
 import { useAuth } from './hooks/useAuth'
+import HeaderAll from './components/HeaderAll'
+import EditProfile from './screens/EditProfile'
 
 // import api from './Api';
 // import { useEffect } from 'react'
@@ -33,6 +35,7 @@ export default function App() {
 
   return (
     <Router>
+      <HeaderAll/>
       <Routes>
         <Route path="/" element={!auth ? <Home/> : <Navigate to="/feed" />} />
         <Route path="/cadastro" element={!auth ? <Cadastro/> : <Navigate to="/feed" />}
@@ -42,6 +45,8 @@ export default function App() {
         <Route path="/home" element={!auth ? <Home/> : <Navigate to="/feed" /> }
         />
         <Route path="/feed" element={auth? <Feed/> : <Navigate to="/" />}
+        />
+        <Route path="/profile" element={auth? <EditProfile/> : <Navigate to="/" />}
         />
       </Routes>
     </Router>

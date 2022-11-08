@@ -88,7 +88,7 @@ export default function Cadastro() {
 
     return (
         <div>
-            <HeaderLogout />
+            {/* <HeaderLogout /> */}
             <div className="flex justify-center mt-35 h-full w-full">
                 <header className="flex-col flex items-center justify-center w-full h-full center">
                     <form onSubmit={(e) => { handleSubmit(e) }}>
