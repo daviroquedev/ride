@@ -2,8 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import HeaderLogout from '../components/HeaderLogout'
 import Logo from '../components/Logo'
-import axios from 'axios'
-import api from '../Api'
+// import api from '../Api'
 
 export default function Home() {
     const [email, setEmail] = useState('');
@@ -19,24 +18,24 @@ export default function Home() {
         setPassword(e.target.value);
     }
 
-    const login = () => {
-        api.post('/', {
-            email: email,
-            password: password
-        })
-            .then(function (response) {
-                console.log(response);
-                tokenAuth = response.data.token
+    // const login = () => {
+    //     api.post('/', {
+    //         email: email,
+    //         password: password
+    //     })
+    //         .then(function (response) {
+    //             console.log(response);
+    //             // setTokenAuth = response.data.token
                 
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
-    }
+    //         })
+    //         .catch(function (error) {
+    //             console.log(error);
+    //         });
+    // }
 
-    useEffect(() => {
-        localStorage.setItem("chave",tokenAuth)
-    },[tokenAuth])
+    // useEffect(() => {
+    //     localStorage.setItem("chave",tokenAuth)
+    // },[tokenAuth])
  
 
 return (
@@ -52,7 +51,7 @@ return (
                 </div>
                 <div className='flex justify-around'>
                     <div>
-                        <input type="button" value="Entrar" onClick={login} className='bg-[#08B5CE] hover:bg-[#19e0fe]  font-bold w-40 h-10 text-[#FFFFFF] rounded-[10px] cursor-pointer' />
+                        <input type="button" value="Entrar"  className='bg-[#08B5CE] hover:bg-[#19e0fe]  font-bold w-40 h-10 text-[#FFFFFF] rounded-[10px] cursor-pointer' />
                     </div>
                     <Link to='/cadastro'>
                         <input type="button" value="Cadastre-se" className='bg-[#08B5CE]  hover:bg-[#19e0fe] font-bold w-40 h-10 text-[#FFFFFF] rounded-[10px] cursor-pointer' />

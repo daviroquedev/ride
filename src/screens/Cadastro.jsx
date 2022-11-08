@@ -4,7 +4,12 @@ import Logo from '../components/Logo'
 import HeaderLogout from '../components/HeaderLogout';
 import { Link } from 'react-router-dom';
 import Checkbox from '../components/Checkbox';
+import { useSelector, useDispatch } from 'react-redux';
+import Message from '../components/Message';
 
+//redux
+import { register, reset } from '../slices/authSlice';
+import { useEffect } from 'react';
 
 export default function Cadastro() {
 
@@ -13,8 +18,11 @@ export default function Cadastro() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confPassword, setConfPassword] = useState('');
-    
 
+    const dispatch = useDispatch();
+
+    const {loading,error} = useSelector((state) => state.auth)
+    
     // function to update state of name with 
     // value enter by user in form
     const handleChange = (e) => {
@@ -42,21 +50,41 @@ export default function Cadastro() {
     }
     // below function will be called when user 
     // click on submit button .
+   
     const handleSubmit = (e) => {
-        if (password != confPassword) {
-            // if 'password' and 'confirm password'
-            // does not match.
-            alert("Senhas não são iguais!");
-        }
-        else {
-            // display alert box with user 
-            // 'name' and 'email' deatils .
-            alert('O formulario foi enviado com  Nome :"' + name +
-                '" ,matricula :"' + matricula + '" e Email :"' + email + '"');
-        }
+
         e.preventDefault();
 
-    }
+        const user = {
+            name,
+            email,
+            matricula,
+            password,
+            confPassword
+        }
+        
+        console.log(user);
+        dispatch(register(user))
+
+        // if (password != confPassword) {
+        //     // if 'password' and 'confirm password'
+        //     // does not match.
+        //     alert("Senhas não são iguais!");
+        // }
+        // else {
+        //     // display alert box with user 
+        //     // 'name' and 'email' deatils .
+        //     alert('O formulario foi enviado com  Nome :"' + name +
+        //         '" ,matricula :"' + matricula + '" e Email :"' + email + '"');
+        // }
+       
+
+    };
+
+    //clean all auth state
+    useEffect(()=>{
+        dispatch(reset())
+    },[dispatch])
 
     return (
         <div>
@@ -70,20 +98,21 @@ export default function Cadastro() {
                             <Logo />
                             <div className='ml-4  flex flex-col justify-center'>
                                 <h3 className='text-[#08B5CE] text-4xl font-bold mb-4'> CADASTRE-SE </h3>
-                                <input type="text" value={name} required onChange={(e) => { handleChange(e) }} className="bg-[#08B5CE] w-96 h-12 mb-2 font-bold p-2 text-white placeholder-[#AFD9FF] rounded-[10px]" placeholder='Digite seu Nome' />
+                                {error && <Message msg={error} type="error"/>}
+                                <input type="text" value={name} onChange={(e) => { handleChange(e) }} className="bg-[#08B5CE] w-96 h-12 mt-2 mb-2 font-bold p-2 text-white placeholder-[#AFD9FF] rounded-[10px]" placeholder='Digite seu Nome' />
                                 { /*when user write in name input box , handleChange()
                   function will be called. */}
-                                <input type="text" value={matricula} required onChange={(e) => { handleMatriculaChange(e) }} className="bg-[#08B5CE] mb-2 w-96 h-12 font-bold p-2 text-white placeholder-[#AFD9FF] rounded-[10px]" placeholder='Digite sua matricula Uninassau' />
+                                <input type="text" value={matricula}  onChange={(e) => { handleMatriculaChange(e) }} className="bg-[#08B5CE] mb-2 w-96 h-12 font-bold p-2 text-white placeholder-[#AFD9FF] rounded-[10px]" placeholder='Digite sua matricula Uninassau' />
                                 { /*when user write in name input box , handleChange()
                   function will be called. */}
-                                <input type="email" value={email} required onChange={(e) => { handleEmailChange(e) }} className="bg-[#08B5CE] mb-2 w-96 h-12 font-bold p-2 text-white placeholder-[#AFD9FF] rounded-[10px]" placeholder='Digite seu email' />
+                                <input type="email" value={email}  onChange={(e) => { handleEmailChange(e) }} className="bg-[#08B5CE] mb-2 w-96 h-12 font-bold p-2 text-white placeholder-[#AFD9FF] rounded-[10px]" placeholder='Digite seu email' />
                                 {/* when user write in email input box , handleEmailChange() 
                   function will be called.*/}
-                                <input type="password" value={password} required onChange={(e) => { handlePasswordChange(e) }} className="bg-[#08B5CE] mb-2 w-96 h-12 font-bold p-2 text-white  placeholder-[#AFD9FF] rounded-[10px]" placeholder='Digite sua senha' />
+                                <input type="password" value={password}  onChange={(e) => { handlePasswordChange(e) }} className="bg-[#08B5CE] mb-2 w-96 h-12 font-bold p-2 text-white  placeholder-[#AFD9FF] rounded-[10px]" placeholder='Digite sua senha' />
                                 {/* when user write in password input box ,
                       handlePasswordChange() function will be called.*/}
 
-                                <input type="password" value={confPassword} required onChange={(e) => { handleConfPasswordChange(e) }} className="bg-[#08B5CE] mb-2 w-96 h-12 font-bold p-2 text-white placeholder-[#AFD9FF] rounded-[10px]" placeholder='Confirme sua senha' />
+                                <input type="password" value={confPassword}  onChange={(e) => { handleConfPasswordChange(e) }} className="bg-[#08B5CE] mb-2 w-96 h-12 font-bold p-2 text-white placeholder-[#AFD9FF] rounded-[10px]" placeholder='Confirme sua senha' />
                                 {/* when user write in confirm password  input box ,
                         handleConfPasswordChange() function will be called.*/}
                                 {/* <Link className='flex justify-end m-3'> */}
@@ -95,7 +124,9 @@ export default function Cadastro() {
                                 {/* </Link> */}
 
                                 <div className='flex justify-around'>
-                                    <input type="submit" value="Cadastrar" className='bg-[#08B5CE] hover:bg-[#19e0fe] font-bold w-40 h-10 text-[#FFFFFF] rounded-[10px] cursor-pointer' />
+                                  {!loading &&   <input type="submit" value="Cadastrar" className='bg-[#08B5CE] hover:bg-[#19e0fe] font-bold w-40 h-10 text-[#FFFFFF] rounded-[10px] cursor-pointer' />}
+                                  {loading &&    <input type="submit" value="Aguarde.." disabled className='bg-[#08B5CE] hover:bg-[#19e0fe] font-bold w-40 h-10 text-[#FFFFFF] rounded-[10px] cursor-pointer' />}
+                                 
                                     <Link to="/">
                                         <input type="button" value="Voltar" className='bg-[#08B5CE] hover:bg-[#19e0fe] font-bold w-40 h-10 text-[#FFFFFF] rounded-[10px] cursor-pointer' />
                                     </Link>
