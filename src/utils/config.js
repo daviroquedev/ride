@@ -1,5 +1,6 @@
-export const api = "http://localhost:5173/api"
-export const uploads = "http://localhost:5173/uploads"
+const link = 'https://backendridesocial2.vercel.app/'
+export const api = `${link}/api`
+export const uploads = `${link}/uploads`
 
 export const requestConfig = (method, data, token = null, image = null) => {
     let config 
