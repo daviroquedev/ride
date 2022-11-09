@@ -98,7 +98,7 @@ export default function EditProfile() {
                 <label>
                     <input type="file" onChange={handleFile} />
                 </label>
-                <input type="text" placeholder="Nome" onChange={(e) => setName(e.target.value)} value={name || ""} className="bg-[#08B5CE] mb-3 mt-2  font-bold p-2 text-white placeholder-[#AFD9FF] rounded-[10px]" />
+                <input type="text" placeholder="Nome" required onChange={(e) => setName(e.target.value)} value={name || ""} className="bg-[#08B5CE] mb-3 mt-2  font-bold p-2 text-white placeholder-[#AFD9FF] rounded-[10px]" />
                 <input type="email" placeholder="Email" value={email || ""} disabled className="bg-[#08B5CE] mb-3 mt-2 font-bold p-2 text-white placeholder-[#AFD9FF] rounded-[10px]" />
                 <input type="email" placeholder="Matricula" value={matricula || ""} disabled className="bg-[#08B5CE] mb-3 mt-2 font-bold p-2 text-white placeholder-[#AFD9FF] rounded-[10px]" />
                 <label>
@@ -107,10 +107,9 @@ export default function EditProfile() {
                 <label>
                     <input type="password" placeholder='Digite sua nova senha' onChange={(e) => setPassword(e.target.value)} value={password || ""} className="bg-[#08B5CE] mb-3 mt-2 font-bold p-2 text-white placeholder-[#AFD9FF] rounded-[10px]" />
                 </label>
-                <label>
-                    {!loading && <input type="submit" value="Atualizar" className='bg-[#08B5CE] hover:bg-[#19e0fe] font-bold w-40 h-10 text-[#FFFFFF] rounded-[10px] cursor-pointer' />}
-                    {loading && <input type="submit" value="Aguarde.." disabled className='bg-[#08B5CE] hover:bg-[#19e0fe] font-bold w-40 h-10 text-[#FFFFFF] rounded-[10px] cursor-pointer' />}
-                </label>
+           
+                {!loading && <input type="submit" value="Atualizar" className='bg-[#08B5CE] hover:bg-[#19e0fe] font-bold w-40 h-10 text-[#FFFFFF] rounded-[10px] cursor-pointer' />}
+                {loading && <input type="submit" value="Aguarde.." disabled className='bg-[#08B5CE] hover:bg-[#19e0fe] font-bold w-40 h-10 text-[#FFFFFF] rounded-[10px] cursor-pointer' />}
                 {error && <Message msg={error} type="error" />}
                 {message && <Message msg={message} type="sucess" />}
             </form>

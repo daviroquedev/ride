@@ -17,22 +17,20 @@ const profile = async(data, token) => {
 };
 
 //update user details
-const updateProfile = async(data,token) => {
-    const config =requestConfig("PUT", data, token, true)
-    
-
-    try{
-        const res  =await fetch(api+ "/users/", config)
-            .then((res) => {
-                res.json()
-            })
-            .catch((err)=>err);
-        return res;
-    } catch(error){
-        console.log(error)
-    }; 
-};
-
+const updateProfile = async (data, token) => {
+    const config = requestConfig("PUT", data, token, true);
+  
+    try {
+      const res = await fetch(api + "/users/", config)
+        .then((res) => res.json())
+        .catch((err) => err);
+  
+      return res;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  
 // Get user details
 const getUserDetails = async (id) => {
     const config = requestConfig("GET");
