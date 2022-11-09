@@ -51,30 +51,32 @@ export default function EditProfile() {
             name
         }
 
-        if(profileImage) {
-            userData.profileImage=profileImage
-         }
+        if (profileImage) {
+            userData.profileImage = profileImage
+        }
 
-         if(bio){
+        if (bio) {
             userData.bio = bio
-         }
+        }
 
-         if(password){
+        if (password) {
             userData.password = password;
-         }
+        }
 
-         //build form data
-         const formData = new FormData()
-         const userFormData = Object.keys(userData).forEach((key) => formData.append(key,userData[key]))
-         
-         formData.append("user", userFormData)
+        //build form data
+        const formData = new FormData()
+        const userFormData = Object.keys(userData).forEach((key) =>
+            formData.append(key, userData[key])
+        );
 
-         await dispatch(updateProfile(userFormData))
+        formData.append("user", userFormData)
 
-         setTimeout(() => {
+        await dispatch(updateProfile(formData));
+
+        setTimeout(() => {
             dispatch(resetMessage())
-         },2000)
-    
+        }, 2000)
+
     };
 
     const handleFile = (e) => {
@@ -116,7 +118,7 @@ export default function EditProfile() {
                     {loading && <input type="submit" value="Aguarde.." disabled className='bg-[#08B5CE] hover:bg-[#19e0fe] font-bold w-40 h-10 text-[#FFFFFF] rounded-[10px] cursor-pointer' />}
                 </label>
                 {error && <Message msg={error} type="error" />}
-                {message &&  <Message msg={message} type="sucess"/>}
+                {message && <Message msg={message} type="sucess" />}
             </form>
         </div>
     )
