@@ -8,7 +8,7 @@ import Avatar from '@mui/material/Avatar';
 
 function CardFeed({ name, description, hastags, avatar }) {
     return (
-        <Card sx={{ width: 1500, marginBottom:1,  flexWrap:'wrap'}} >
+        <Card sx={{ width: 1500, marginBottom:1,  flexWrap:'no-wrap'}} >
             <CardContent>
                 <div className='flex flex-col items-center bg-[#EEEEEE] ml-2 mt-2 py-3 px-3'>
                     <Avatar src={avatar}/>

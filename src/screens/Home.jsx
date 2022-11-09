@@ -39,7 +39,7 @@ export default function Home() {
     //clean all auth states
     useEffect(() => {
         dispatch(reset())
-    }, dispatch)
+    }, [dispatch])
 
     return (
         <div>
