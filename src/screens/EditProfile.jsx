@@ -11,7 +11,7 @@ import { profile, resetMessage, updateProfile } from './../slices/userSlice';
 
 //components
 import Message from './../components/Message';
-import { useRouteLoaderData } from 'react-router-dom';
+
 
 export default function EditProfile() {
     const dispatch = useDispatch()

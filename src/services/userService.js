@@ -22,18 +22,16 @@ const updateProfile = async(data,token) => {
     config.headers['Content-Type']='application/json';
 
     try{
-        const res =await fetch(api+ "/users/", config)
+        const res  =await fetch(api+ "/users/", config)
             .then((res) => {
                 res.json()
             })
             .catch((err)=>err);
-
+        return res;
     } catch(error){
         console.log(error)
-    };
-
-
-}
+    }; 
+};
 
 const userService = {
     profile,
