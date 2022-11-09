@@ -1,4 +1,4 @@
-const link = 'https://backendridesocial2.vercel.app/'
+const link = 'https://backendridesocial.herokuapp.com/'
 export const api = `${link}/api`
 export const uploads = `${link}/uploads`
 
