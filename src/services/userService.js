@@ -19,7 +19,7 @@ const profile = async(data, token) => {
 //update user details
 const updateProfile = async(data,token) => {
     const config =requestConfig("PUT", data, token, true)
-    config.headers['Content-Type']='application/json';
+    
 
     try{
         const res  =await fetch(api+ "/users/", config)
