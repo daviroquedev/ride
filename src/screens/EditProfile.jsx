@@ -65,7 +65,7 @@ export default function EditProfile() {
 
          //build form data
          const formData = new FormData()
-         const userFormData = Object.key(userData).forEach((key) => formData.append(key,userData[key]))
+         const userFormData = Object.keys(userData).forEach((key) => formData.append(key,userData[key]))
          
          formData.append("user", userFormData)
 
