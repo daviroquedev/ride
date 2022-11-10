@@ -24,7 +24,7 @@ export default function Profile() {
 
     const { user, loading } = useSelector((state) => state.user)
     const { user: userAuth } = useSelector((state) => state.auth)
-    const {photos, loading: loadingPhoto, message: messagePhoto, error: errorPhoto} = useSelector((state) => state.photo)
+    const { photos, loading: loadingPhoto, message: messagePhoto, error: errorPhoto } = useSelector((state) => state.photo)
 
     const [title, setTitle] = useState("")
     const [image, setImage] = useState("")
@@ -73,7 +73,7 @@ export default function Profile() {
 
 
 
-    if(loading) {
+    if (loading) {
         return <p>Carregando...</p>
     }
 
@@ -86,7 +86,7 @@ export default function Profile() {
                 <h2>{user.name}</h2>
                 <p>{user.bio}</p>
             </div>
-            {id===userAuth._id && (
+            {id === userAuth._id && (
                 <>
                     <div className="new-photo" ref={newPhotoForm}>
                         <h3>Compartilhe algo com todos:</h3>
@@ -100,21 +100,41 @@ export default function Profile() {
                                 <input type="file" onChange={handleFile} />
                             </label>
                             {!loadingPhoto && <input type="submit" value="Postar" />}
-                            {loadingPhoto && <input type="submit"  disabled value="Aguarde" />}
+                            {loadingPhoto && <input type="submit" disabled value="Aguarde" />}
                         </form>
                     </div>
-                    {errorPhoto && <Message msg={errorPhoto} type="error"/>}
-                    {messagePhoto && <Message msg={messagePhoto} type="sucess"/>}
+                    {errorPhoto && <Message msg={errorPhoto} type="error" />}
+                    {messagePhoto && <Message msg={messagePhoto} type="sucess" />}
                 </>
             )}
             <div className="user-photos">
                 <h2>Post publicados:</h2>
-                <div className="photo-container">
-                    {photos && photos.map((photo) => 
-                        <div className="photo" key={photo._id}>
-                            {photo.image && (<img src={`${uploads}/photos/${photo.image}`} alt={photo.title}/>)}
-                        </div>
-                    )}
+                <div className="photos-container">
+                    {photos &&
+                        photos.map((photo) => (
+                            <div className="photo" key={photo._id}>
+                                {photo.image && (
+                                    <img
+                                        src={`${uploads}/photos/${photo.image}`}
+                                        alt={photo.title}
+                                    />
+                                )}
+                                {id === userAuth._id ? (
+                                    <div className="actions">
+                                        <Link to={`/photos/${photo._id}`}>
+                                            <BsFillEyeFill />
+                                        </Link>
+                                        <BsPencilFill onClick={() => handleEdit(photo)} />
+                                        <BsXLg onClick={() => handleDelete(photo._id)} />
+                                    </div>
+                                ) : (
+                                    <Link className="btn" to={`/photos/${photo._id}`}>
+                                        Ver
+                                    </Link>
+                                )}
+                            </div>
+                        ))}
+                    {photos.length === 0 && <p>Ainda não há fotos publicadas...</p>}
                 </div>
             </div>
         </div>
