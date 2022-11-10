@@ -9,6 +9,7 @@ import Feed from './screens/Feed'
 import { useAuth } from './hooks/useAuth'
 import HeaderAll from './components/HeaderAll'
 import EditProfile from './screens/EditProfile'
+import Profile from './screens/Profile'
 
 // import api from './Api';
 // import { useEffect } from 'react'
@@ -16,12 +17,12 @@ import EditProfile from './screens/EditProfile'
 
 export default function App() {
 
-  const {auth, loading} = useAuth()
+  const { auth, loading } = useAuth()
 
   console.log(`logado? ${auth}`)
 
 
-  if(loading){
+  if (loading) {
     return <p>Carregando...</p>
   }
 
@@ -35,22 +36,25 @@ export default function App() {
 
   return (
     <Router>
-      <HeaderAll/>
+      <HeaderAll />
       <Routes>
-        <Route path="/" element={!auth ? <Home/> : <Navigate to="/feed" />} />
-        <Route path="/cadastro" element={!auth ? <Cadastro/> : <Navigate to="/feed" />}
+        <Route path="/" element={!auth ? <Home /> : <Navigate to="/feed" />} />
+        <Route path="/cadastro" element={!auth ? <Cadastro /> : <Navigate to="/feed" />}
         />
-        <Route path="/sendpost" element={auth? <FeedPost/> : <Navigate to="/" /> } 
+        <Route path="/sendpost" element={auth ? <FeedPost /> : <Navigate to="/" />}
         />
-        <Route path="/home" element={!auth ? <Home/> : <Navigate to="/feed" /> }
+        <Route path="/profile" element={auth ? <EditProfile /> : <Navigate to="/" />}
         />
-        <Route path="/feed" element={auth? <Feed/> : <Navigate to="/" />}
+        <Route path="/users/:id" element={auth ? <Profile/> : <Navigate to="/" />}
         />
-        <Route path="/profile" element={auth? <EditProfile/> : <Navigate to="/" />}
+        <Route path="/home" element={!auth ? <Home /> : <Navigate to="/feed" />}
         />
+        <Route path="/feed" element={auth ? <Feed /> : <Navigate to="/" />}
+        />
+
       </Routes>
     </Router>
-    
+
   )
 }
 
