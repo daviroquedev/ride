@@ -5,22 +5,14 @@ import "./HeaderAll.css";
 import { NavLink, Link, useNavigate } from 'react-router-dom';
 import { Avatar } from '@mui/material';
 
-import { useEffect, useRef } from "react";
-import { useParams } from "react-router-dom";
 
-
-
-import { uploads } from "../utils/config";
-import { getUserDetails } from "../slices/userSlice";
 
 //redux
 import { logout, reset } from '../slices/authSlice';
 
-
 export default function HeaderAll() {
     const { auth } = useAuth();
-    const { user } = useSelector((state) => state.auth);
-    const { id } = useParams()
+    const { user } = useSelector((state) => state.auth)
 
     const navigate = useNavigate()
     const dispatch = useDispatch()
@@ -31,12 +23,6 @@ export default function HeaderAll() {
 
         navigate("/");
     }
-
-    //load user data
-    useEffect(() => {
-        dispatch(getUserDetails(id));
-    }, [dispatch, id]);
-
 
 
     return (
@@ -80,7 +66,7 @@ export default function HeaderAll() {
                         </li>
                         <li>
                             <NavLink to="/profile">
-                                <Avatar src={user.profileImage && (<img src={`${uploads}/users/${user.profileImage}`} alt={user.name} />)} />
+                                <Avatar/>
                             </NavLink>
                         </li>
 
