@@ -14,7 +14,7 @@ import { useParams } from "react-router-dom";
 
 //redux
 import { getUserDetails } from "../slices/userSlice";
-import { publishPhoto, resetMessage } from "../slices/photoSlice";
+import { publishPhoto, resetMessage, getUserPhotos } from "../slices/photoSlice";
 
 export default function Profile() {
 
@@ -37,6 +37,7 @@ export default function Profile() {
     //load user data
     useEffect(() => {
         dispatch(getUserDetails(id));
+        dispatch(getUserPhotos(id));
     }, [dispatch, id]);
 
     const handleFile = (e) => {
@@ -106,6 +107,16 @@ export default function Profile() {
                     {messagePhoto && <Message msg={messagePhoto} type="sucess"/>}
                 </>
             )}
+            <div className="user-photos">
+                <h2>Post publicados:</h2>
+                <div className="photo-container">
+                    {photos && photos.map((photo) => (
+                        <div className="photo" key={photo._id}>
+                            {photo.image && (<img src={`${uploads}/photos/${photo.image}`} alt={photo.title}/>)}
+                        </div>
+                    ))}
+                </div>
+            </div>
         </div>
     )
 }
