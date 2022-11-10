@@ -110,11 +110,11 @@ export default function Profile() {
             <div className="user-photos">
                 <h2>Post publicados:</h2>
                 <div className="photo-container">
-                    {photos && photos.map((photo) => (
+                    {photos && photos.map((photo) => 
                         <div className="photo" key={photo._id}>
                             {photo.image && (<img src={`${uploads}/photos/${photo.image}`} alt={photo.title}/>)}
                         </div>
-                    ))}
+                    )}
                 </div>
             </div>
         </div>
