@@ -49,7 +49,7 @@ export default function HeaderAll() {
                             user && (
                                 <li>
                                     <NavLink to={`/users/${user._id}`}>
-                                        PROFILE
+                                        ENVIAR POST
                                     </NavLink>
                                 </li>
                             )
@@ -64,7 +64,7 @@ export default function HeaderAll() {
                         </li>
                         <li>
                             <NavLink to="/profile">
-                                <Avatar />
+                                <Avatar src={user.profileImage && (<img src={`${uploads}/users/${user.profileImage}`} alt={user.name} />)}/>
                             </NavLink>
                         </li>
 
