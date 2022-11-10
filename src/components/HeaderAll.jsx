@@ -6,7 +6,7 @@ import { NavLink, Link, useNavigate } from 'react-router-dom';
 import { Avatar } from '@mui/material';
 
 //redux
-import {logout, reset} from '../slices/authSlice';
+import { logout, reset } from '../slices/authSlice';
 
 export default function HeaderAll() {
     const { auth } = useAuth();
@@ -15,7 +15,7 @@ export default function HeaderAll() {
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
-    const handleLogout = ()=> {
+    const handleLogout = () => {
         dispatch(logout())
         dispatch(reset())
 
@@ -41,6 +41,15 @@ export default function HeaderAll() {
                                 <li>
                                     <NavLink to={`/users/${user._id}`}>
                                         ENVIAR POST
+                                    </NavLink>
+                                </li>
+                            )
+                        }
+                        {
+                            user && (
+                                <li>
+                                    <NavLink to={`/users/${user._id}`}>
+                                        PROFILE
                                     </NavLink>
                                 </li>
                             )
