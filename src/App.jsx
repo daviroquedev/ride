@@ -11,8 +11,7 @@ import HeaderAll from './components/HeaderAll'
 import EditProfile from './screens/EditProfile'
 import Profile from './screens/Profile'
 
-// import api from './Api';
-// import { useEffect } from 'react'
+
 
 
 export default function App() {
@@ -25,12 +24,6 @@ export default function App() {
   if (loading) {
     return <p>Carregando...</p>
   }
-
-  // useEffect(()=>{
-  //   api.get('/').then(res=>{
-  //     console.log(res.data);
-  //   })
-  // },[])
 
 
 
