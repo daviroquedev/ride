@@ -58,20 +58,23 @@ export const deletePhoto = createAsyncThunk(
 // UPDATE A PHOTO
 export const updatePhoto = createAsyncThunk(
   "photo/update",
-  async (id, thunkAPI) => {
+  async (photoData, thunkAPI) => {
     const token = thunkAPI.getState().auth.user.token;
 
-    const data = await photoService.updatePhoto({title : photoData.title}, photoData.id, token);
+    const data = await photoService.updatePhoto(
+      { title: photoData.title },
+      photoData.id,
+      token
+    );
 
-    //check for errors 
+    // Check for errors
     if (data.errors) {
-      return thunkAPI.rejectWithValue(data.errors[0])
+      return thunkAPI.rejectWithValue(data.errors[0]);
     }
 
     return data;
   }
-)
-
+);
 export const photoSlice = createSlice({
   name: "publish",
   initialState,
