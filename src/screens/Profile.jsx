@@ -95,20 +95,6 @@ export default function Profile() {
         editPhotoForm.current.classList.toggle("hide");
     }
 
-    //update a photo
-    const handleUpdate = (e) => {
-        e.preventDefault();
-
-        const photoData = {
-            title: editTitle,
-            id: editId
-        }
-
-        dispatch(updatePhoto(photoData))
-
-        resetComponentMessage();
-
-    };
 
     //open edit form
     const handleEdit = (photo) => {
@@ -124,6 +110,19 @@ export default function Profile() {
         hideOrShowForms();
     };
 
+       // Update photo title
+  const handleUpdate = (e) => {
+    e.preventDefault();
+
+    const photoData = {
+      title: editTitle,
+      id: editId,
+    };
+
+    dispatch(updatePhoto(photoData));
+
+    resetComponentMessage();
+  };   
 
 
     if (loading) {
