@@ -11,6 +11,10 @@
     border-bottom: 1px solid #363636;
 }
 
+.profile-description{
+    border-bottom: 1px solid;
+  }
+
 .profile-header img {
     width: 100px;
     height: 100px;
@@ -35,7 +39,7 @@
 }
 
 .photo {
-    width: 48%;
+    width: 100%;
     margin: 0.3%;
 }
 
