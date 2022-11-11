@@ -1,5 +1,4 @@
 import "./Profile.css";
-import { FaBeer } from 'react-icons/fa';
 import { BsFillEyeFill, BsPencilFill, BsXLg } from "react-icons/bs";
 import { uploads } from "../utils/config";
 
@@ -92,7 +91,8 @@ export default function Profile() {
 
     //show or hide forms
     const hideOrShowForms = () => {
-        newPhotoForm.current.classList.toggle("hide")
+        newPhotoForm.current.classList.toggle("hide");
+        editPhotoForm.current.classList.toggle("hide");
     }
 
     //update a photo
@@ -112,7 +112,7 @@ export default function Profile() {
 
     //open edit form
     const handleEdit = (photo) => {
-        if(editPhotoForm.current.classList.contains("hide")){
+        if (editPhotoForm.current.classList.contains("hide")) {
             hideOrShowForms()
         }
         setEditId(photo._id);
@@ -124,7 +124,7 @@ export default function Profile() {
         hideOrShowForms();
     };
 
-    
+
 
     if (loading) {
         return <p>Carregando...</p>
@@ -181,7 +181,7 @@ export default function Profile() {
                                 <Link to={`/photos/${photo._id}`}>
                                     <BsFillEyeFill className="icon" fill="black" />
                                 </Link>
-                                <BsPencilFill className="icon"  onClick={() => handleEdit(photo)}/>
+                                <BsPencilFill className="icon" onClick={() => handleEdit(photo)} />
                                 <BsXLg className="icon" onClick={() => handleDelete(photo._id)} />
                             </div>) : (<Link className="btn" to={`/photos/${photo._id}`}></Link>)}
                         </div>
