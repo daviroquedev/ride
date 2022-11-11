@@ -41,7 +41,7 @@ export default function HeaderAll() {
                         {
                             user && (
                                 <li>
-                                    <NavLink to={`/users/${user._id}`}>
+                                    <NavLink to="/sendpost">
                                         ENVIAR POST
                                     </NavLink>
                                 </li>
