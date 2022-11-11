@@ -53,27 +53,31 @@ export const photoSlice = createSlice({
         builder
         .addCase(publishPhoto.pending, (state) => {
             state.loading = true;
-            state.error = false;
-        }).addCase(publishPhoto.fulfilled, (state, action) => {
+            state.error = null;
+          })
+          .addCase(publishPhoto.fulfilled, (state, action) => {
             state.loading = false;
-            state.sucess = true;
+            state.success = true;
             state.error = null;
             state.photo = action.payload;
             state.photos.unshift(state.photo);
-            state.message = "Post publicado com sucesso!"
-        }).addCase(publishPhoto.rejected, (state, action) => {
+            state.message = "Post publicado com sucesso!";
+          })
+          .addCase(publishPhoto.rejected, (state, action) => {
             state.loading = false;
             state.error = action.payload;
-            state.photo = {};
-        }) .addCase(getUserPhotos.pending, (state) => {
+            state.photo = null;
+          })
+          .addCase(getUserPhotos.pending, (state) => {
             state.loading = true;
-            state.error = false;
-        }).addCase(getUserPhotos.fulfilled, (state, action) => {
+            state.error = null;
+          })
+          .addCase(getUserPhotos.fulfilled, (state, action) => {
             state.loading = false;
-            state.sucess = true;
+            state.success = true;
             state.error = null;
             state.photos = action.payload;
-        })
+          })
     }
 });
 
