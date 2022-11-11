@@ -39,6 +39,16 @@
     width: 100%;
 }
 
+.actions {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.action svg {
+    cursor: pointer;
+}
+
 
 .edit-photo {
     margin-bottom: 1em;

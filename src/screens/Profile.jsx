@@ -1,5 +1,6 @@
 import "./Profile.css";
-
+import { FaBeer } from 'react-icons/fa';
+import { BsFillEyeFill, BsPencilFill, BsXLg } from "react-icons/bs";
 import { uploads } from "../utils/config";
 
 //components
@@ -115,6 +116,13 @@ export default function Profile() {
                    {photos && photos.map((photo) => (
                     <div className="photo" key={photo._id}>
                         {photo.image && (<img src={`${uploads}/photos/${photo.image}`} alt={photo.title}/>)}
+                        {id === userAuth._id ? (<div className="actions">
+                            <Link to={`/photos/${photo._id}`}>
+                                <BsFillEyeFill/>
+                            </Link>
+                            <BsPencilFill/>
+                            <BsXLg/>
+                        </div>):( <Link className="btn" to={`/photos/${photo._id}`}></Link>)}
                     </div>
                    ))}
                     
