@@ -110,19 +110,19 @@ export default function Profile() {
         hideOrShowForms();
     };
 
-       // Update photo title
-  const handleUpdate = (e) => {
-    e.preventDefault();
+    // Update photo title
+    const handleUpdate = (e) => {
+        e.preventDefault();
 
-    const photoData = {
-      title: editTitle,
-      id: editId,
+        const photoData = {
+            title: editTitle,
+            id: editId,
+        };
+
+        dispatch(updatePhoto(photoData));
+
+        resetComponentMessage();
     };
-
-    dispatch(updatePhoto(photoData));
-
-    resetComponentMessage();
-  };   
 
 
     if (loading) {
@@ -131,12 +131,14 @@ export default function Profile() {
 
     return (
         <div id="profile">
-            <div className="profile-header">
-                {user.profileImage && (<img src={`${uploads}/users/${user.profileImage}`} alt={user.name} />)}
-            </div>
-            <div className="profile-description">
-                <h2 className="bioUserName">@{user.name}</h2>
-                <p>{user.bio}</p>
+            <div className="bioHeader">
+                <div className="profile-header">
+                    {user.profileImage && (<img src={`${uploads}/users/${user.profileImage}`} alt={user.name} />)}
+                </div>
+                <div>
+                    <h2 className="bioUserName">@{user.name}</h2>
+                    <p>{user.bio}</p>
+                </div>
             </div>
             {id === userAuth._id && (
                 <>
@@ -175,7 +177,7 @@ export default function Profile() {
                     {photos && photos.map((photo) => (
                         <div className="photo" key={photo._id}>
                             {photo.image && (<div><h2>{photo.title}</h2> <img src={`${uploads}/photos/${photo.image}`} alt={photo.title} />
-                             </div>)}
+                            </div>)}
                             {id === userAuth._id ? (<div className="actions">
                                 <Link to={`/photos/${photo._id}`}>
                                     <BsFillEyeFill className="icon" fill="black" />

@@ -3,6 +3,10 @@
     margin: 0 auto;
 }
 
+.bioHeader{
+    display: flex;
+}
+
 .profile-header {
     display: flex;
     align-items: center;
@@ -13,7 +17,8 @@
 
 .profile-description{
     border-bottom: 1px solid;
-  }
+
+}
 
 .profile-header img {
     width: 100px;
@@ -39,8 +44,9 @@
 }
 
 .photo {
-    width: 100%;
+    width: 70%;
     margin: 0.3%;
+    height: 50%;
 }
 
 .photo img {
