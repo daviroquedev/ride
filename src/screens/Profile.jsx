@@ -112,7 +112,7 @@ export default function Profile() {
             <div className="user-photos">
                 <h2>Post publicados:</h2>
                 <div className="photo-container">
-                    <h2>ibagewns</h2>
+                    {console.log("photosss"+photos)}
                 </div>
             </div>
         </div>

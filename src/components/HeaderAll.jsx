@@ -51,7 +51,7 @@ export default function HeaderAll() {
                             user && (
                                 <li>
                                     <NavLink to={`/users/${user._id}`}>
-                                        ENVIAR POST
+                                        PROFILE
                                     </NavLink>
                                 </li>
                             )
