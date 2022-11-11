@@ -43,6 +43,11 @@
     display: flex;
     justify-content: space-around;
     padding: 10px;
+    color: ;
+}
+
+.action.icon{
+    color: #08B5CE;
 }
 
 .action svg {
