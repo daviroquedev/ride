@@ -118,9 +118,9 @@ export default function Profile() {
                         {photo.image && (<img src={`${uploads}/photos/${photo.image}`} alt={photo.title}/>)}
                         {id === userAuth._id ? (<div className="actions">
                             <Link to={`/photos/${photo._id}`}>
-                                <BsFillEyeFill className="icon"/>
+                                <BsFillEyeFill className="icon" fill="black"/>
                             </Link>
-                            <BsPencilFill className="icon"/>
+                            <BsPencilFill className="icon" />
                             <BsXLg className="icon"/>
                         </div>):( <Link className="btn" to={`/photos/${photo._id}`}></Link>)}
                     </div>
