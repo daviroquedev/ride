@@ -112,7 +112,7 @@ export default function Profile() {
             <div className="user-photos">
                 <h2>Post publicados:</h2>
                 <div className="photo-container">
-                    {photos[0]}
+                   <h2>trtsds</h2>
                     
                 </div>
             </div>
