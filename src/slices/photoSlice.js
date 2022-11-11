@@ -132,24 +132,26 @@ export const photoSlice = createSlice({
       })
       .addCase(updatePhoto.pending, (state) => {
         state.loading = true;
-        state.error = false;
+        state.error = null;
       })
       .addCase(updatePhoto.fulfilled, (state, action) => {
         state.loading = false;
         state.success = true;
         state.error = null;
+
         state.photos.map((photo) => {
-          if(photo._id === action.payload.photo._id){
-            return photo.title = action.payload.photo.title
+          if (photo._id === action.payload.photo._id) {
+            return (photo.title = action.payload.photo.title);
           }
           return photo;
         });
+
         state.message = action.payload.message;
       })
       .addCase(updatePhoto.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
-        state.photo = {};
+        state.photo = null;
       })
   }
 });

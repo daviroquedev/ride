@@ -102,8 +102,8 @@ export default function Profile() {
             hideOrShowForms()
         }
         setEditId(photo._id);
-        setEditTitle(photo.title);
         setEditImage(photo.image);
+        setEditTitle(photo.title);
     }
 
     const handleCancelEdit = (e) => {
