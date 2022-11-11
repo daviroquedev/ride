@@ -15,7 +15,7 @@ import { useParams } from "react-router-dom";
 
 //redux
 import { getUserDetails } from "../slices/userSlice";
-import { publishPhoto, resetMessage, getUserPhotos } from "../slices/photoSlice";
+import { publishPhoto, resetMessage, getUserPhotos, deletePhoto } from "../slices/photoSlice";
 
 export default function Profile() {
 
@@ -43,6 +43,14 @@ export default function Profile() {
         dispatch(getUserPhotos(id));
     }, [dispatch, id]);
 
+    //function reset component message
+    const resetComponentMessage = () => {
+        setTimeout(() => {
+            dispatch(resetMessage())
+        }, 2000);
+    }
+
+
     const handleFile = (e) => {
         //image previw
         const image = e.target.files[0]
@@ -69,12 +77,15 @@ export default function Profile() {
 
         setTitle("");
 
-        setTimeout(() => {
-            dispatch(resetMessage())
-        }, 2000);
+        resetComponentMessage()
     }
 
+    //delete a photo
+    const handleDelete = (id) => {
+        dispatch(deletePhoto(id));
+        resetComponentMessage();
 
+    }
 
     if (loading) {
         return <p>Carregando...</p>
@@ -121,7 +132,7 @@ export default function Profile() {
                                 <BsFillEyeFill className="icon" fill="black"/>
                             </Link>
                             <BsPencilFill className="icon" />
-                            <BsXLg className="icon"/>
+                            <BsXLg className="icon" onClick={() => handleDelete(photo._id)}/>
                         </div>):( <Link className="btn" to={`/photos/${photo._id}`}></Link>)}
                     </div>
                    ))}
