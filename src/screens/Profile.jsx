@@ -111,7 +111,7 @@ export default function Profile() {
             )}
             <div className="user-photos">
                 <h2>Post publicados:</h2>
-                <div className="photo-container">
+                <div className="photos-container">
                    {photos && photos.map((photo) => (
                     <div className="photo" key={photo._id}>
                         {photo.image && (<img src={`${uploads}/photos/${photo.image}`} alt={photo.title}/>)}
