@@ -43,12 +43,15 @@
     display: flex;
     justify-content: space-around;
     padding: 10px;
-    color: ;
 }
 
 
 .actions svg {
     cursor: pointer;
+}
+
+.hide {
+    display: none;
 }
 
 
