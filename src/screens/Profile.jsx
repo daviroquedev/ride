@@ -135,16 +135,15 @@ export default function Profile() {
                 {user.profileImage && (<img src={`${uploads}/users/${user.profileImage}`} alt={user.name} />)}
             </div>
             <div className="profile-description">
-                <h2>@{user.name}</h2>
+                <h2 className="bioUserName">@{user.name}</h2>
                 <p>{user.bio}</p>
             </div>
             {id === userAuth._id && (
                 <>
                     <div className="new-photo" ref={newPhotoForm}>
-                        <h3>Compartilhe algo com todos:</h3>
+                        <h3>Compartilhe algo bacana com todos da sua faculdade.</h3>
                         <form onSubmit={submitHandle}>
                             <label>
-                                <span>Titulo do Post:</span>
                                 <input type="text" placeholder="O que você quer compartilhar?" onChange={(e) => setTitle(e.target.value)} value={title || ""} />
                             </label>
                             <label>
@@ -171,12 +170,12 @@ export default function Profile() {
                 </>
             )}
             <div className="user-photos">
-                <h2>Post publicados:</h2>
+                <h2>SEU FEED DE NOTICIAS</h2>
                 <div className="photos-container">
                     {photos && photos.map((photo) => (
                         <div className="photo" key={photo._id}>
-                            {photo.image && (<div><img src={`${uploads}/photos/${photo.image}`} alt={photo.title} />
-                            <h2>{photo.title}</h2> </div>)}
+                            {photo.image && (<div><h2>{photo.title}</h2> <img src={`${uploads}/photos/${photo.image}`} alt={photo.title} />
+                             </div>)}
                             {id === userAuth._id ? (<div className="actions">
                                 <Link to={`/photos/${photo._id}`}>
                                     <BsFillEyeFill className="icon" fill="black" />

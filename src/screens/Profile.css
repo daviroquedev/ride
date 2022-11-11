@@ -24,6 +24,10 @@
 
 }
 
+.bioUserName {
+    color: #08B5CE;
+}
+
 .photos-container {
     display: flex;
     flex-wrap: wrap;
@@ -31,7 +35,7 @@
 }
 
 .photo {
-    width: 32%;
+    width: 48%;
     margin: 0.3%;
 }
 
