@@ -136,7 +136,7 @@ export default function Profile() {
             </div>
             <div className="profile-description">
                 <h2>@{user.name}</h2>
-                <p>Quem sou eu:{user.bio}</p>
+                <p>{user.bio}</p>
             </div>
             {id === userAuth._id && (
                 <>
@@ -175,7 +175,8 @@ export default function Profile() {
                 <div className="photos-container">
                     {photos && photos.map((photo) => (
                         <div className="photo" key={photo._id}>
-                            {photo.image && (<img src={`${uploads}/photos/${photo.image}`} alt={photo.title} />)}
+                            {photo.image && (<div><img src={`${uploads}/photos/${photo.image}`} alt={photo.title} />
+                            <h2>{photo.title}</h2> </div>)}
                             {id === userAuth._id ? (<div className="actions">
                                 <Link to={`/photos/${photo._id}`}>
                                     <BsFillEyeFill className="icon" fill="black" />
