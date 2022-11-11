@@ -170,7 +170,7 @@ export default function Profile() {
                 </>
             )}
             <div className="user-photos">
-                <h2>SEU FEED DE NOTICIAS</h2>
+                <h2 className="profile-description">SEU FEED DE NOTICIAS</h2>
                 <div className="photos-container">
                     {photos && photos.map((photo) => (
                         <div className="photo" key={photo._id}>
