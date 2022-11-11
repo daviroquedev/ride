@@ -135,7 +135,7 @@ export default function Profile() {
                 <div className="profile-header">
                     {user.profileImage && (<img src={`${uploads}/users/${user.profileImage}`} alt={user.name} />)}
                 </div>
-                <div>
+                <div className="bio-header">
                     <h2 className="bioUserName">@{user.name}</h2>
                     <p>{user.bio}</p>
                 </div>
