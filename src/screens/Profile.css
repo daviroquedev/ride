@@ -5,6 +5,7 @@
 
 .bioHeader{
     display: flex;
+    border-bottom: 1px solid #363636;
 }
 
 .profile-header {
@@ -12,11 +13,10 @@
     align-items: center;
     flex-wrap: wrap;
     padding:1em;
-    border-bottom: 1px solid #363636;
 }
 
 .profile-description{
-    border-bottom: 1px solid;
+    margin-bottom: 5px;
 
 }
 
