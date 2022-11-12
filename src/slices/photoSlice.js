@@ -75,6 +75,8 @@ export const updatePhoto = createAsyncThunk(
     return data;
   }
 );
+
+
 export const photoSlice = createSlice({
   name: "publish",
   initialState,
