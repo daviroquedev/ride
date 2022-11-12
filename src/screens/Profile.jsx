@@ -113,7 +113,6 @@ export default function Profile() {
   
     // Cancel editing
     const handleCancelEdit = () => {
-      e.preventDefault()
       hideOrShowForms();
     };
   
