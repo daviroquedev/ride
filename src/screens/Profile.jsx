@@ -18,116 +18,123 @@ import { publishPhoto, resetMessage, getUserPhotos, deletePhoto, updatePhoto } f
 
 export default function Profile() {
 
-    const { id } = useParams()
+    const { id } = useParams();
 
-    const dispatch = useDispatch()
-
-    const { user, loading } = useSelector((state) => state.user)
-    const { user: userAuth } = useSelector((state) => state.auth)
-    const { photos, loading: loadingPhoto, message: messagePhoto, error: errorPhoto } = useSelector((state) => state.photo)
-
-    console.log("isso é photos" + photos)
-
-    const [title, setTitle] = useState("")
-    const [image, setImage] = useState("")
-    const [editId, setEditId] = useState("")
-    const [editImage, setEditImage] = useState("")
-    const [editTitle, setEditTitle] = useState("")
-
-    // new form and edit form refs
-    const newPhotoForm = useRef()
-    const editPhotoForm = useRef()
-
-
-    //load user data
+    const dispatch = useDispatch();
+  
+    const { user, loading } = useSelector((state) => state.user);
+    const { user: userAuth } = useSelector((state) => state.auth);
+    const {
+      photos,
+      loading: loadingPhoto,
+      error: errorPhoto,
+      message: messagePhoto,
+    } = useSelector((state) => state.photo);
+  
+    const [title, setTitle] = useState();
+    const [image, setImage] = useState();
+  
+    const [editId, setEditId] = useState();
+    const [editImage, setEditImage] = useState();
+    const [editTitle, setEditTitle] = useState();
+  
+    // New form and edit form refs
+    const newPhotoForm = useRef();
+    const editPhotoForm = useRef();
+  
+    // Load user data
     useEffect(() => {
-        dispatch(getUserDetails(id));
-        dispatch(getUserPhotos(id));
+      dispatch(getUserDetails(id));
+      dispatch(getUserPhotos(id));
     }, [dispatch, id]);
-
-    //function reset component message
-    const resetComponentMessage = () => {
-        setTimeout(() => {
-            dispatch(resetMessage())
-        }, 2000);
+  
+    // Reset component message
+    function resetComponentMessage() {
+      setTimeout(() => {
+        dispatch(resetMessage());
+      }, 2000);
     }
-
-
-    const handleFile = (e) => {
-        //image previw
-        const image = e.target.files[0]
-        setImage(image);
-    }
-
-
+  
+    // Publish a new photo
     const submitHandle = (e) => {
-        e.preventDefault()
-
-        const photoData = {
-            title,
-            image
-        }
-
-        //build form data
-        const formData = new FormData()
-
-        const photoFormData = Object.keys(photoData).forEach((key) => formData.append(key, photoData[key]));
-
-        formData.append("photo", photoFormData)
-
-        dispatch(publishPhoto(formData))
-
-        setTitle("");
-
-        resetComponentMessage()
-    }
-
-    //delete a photo
-    const handleDelete = (id) => {
-        dispatch(deletePhoto(id));
-        resetComponentMessage();
-
-    }
-
-    //show or hide forms
-    const hideOrShowForms = () => {
-        newPhotoForm.current.classList.toggle("hide");
-        editPhotoForm.current.classList.toggle("hide");
-    }
-
-
-    //open edit form
-    const handleEdit = (photo) => {
-        if (editPhotoForm.current.classList.contains("hide")) {
-            hideOrShowForms()
-        }
-        setEditId(photo._id);
-        setEditImage(photo.image);
-        setEditTitle(photo.title);
-    }
-
-    const handleCancelEdit = (e) => {
-        hideOrShowForms();
+      e.preventDefault();
+  
+      const photoData = {
+        title,
+        image,
+      };
+  
+      // build form data
+      const formData = new FormData();
+  
+      const photoFormData = Object.keys(photoData).forEach((key) =>
+        formData.append(key, photoData[key])
+      );
+  
+      formData.append("photo", photoFormData);
+  
+      dispatch(publishPhoto(formData));
+  
+      setTitle("");
+  
+      resetComponentMessage();
     };
-
+  
+    // change image state
+    const handleFile = (e) => {
+      const image = e.target.files[0];
+  
+      setImage(image);
+    };
+  
+    // Exclude an image
+    const handleDelete = (id) => {
+      dispatch(deletePhoto(id));
+  
+      resetComponentMessage();
+    };
+  
+    // Show or hide forms
+    function hideOrShowForms() {
+      newPhotoForm.current.classList.toggle("hide");
+      editPhotoForm.current.classList.toggle("hide");
+    }
+  
+    // Show edit form
+    const handleEdit = (photo) => {
+      if (editPhotoForm.current.classList.contains("hide")) {
+        hideOrShowForms();
+      }
+  
+      setEditId(photo._id);
+      setEditImage(photo.image);
+      setEditTitle(photo.title);
+    };
+  
+    // Cancel editing
+    const handleCancelEdit = () => {
+      e.preventDefault()
+      hideOrShowForms();
+    };
+  
     // Update photo title
     const handleUpdate = (e) => {
-        e.preventDefault();
-
-        const photoData = {
-            title: editTitle,
-            id: editId,
-        };
-
-        dispatch(updatePhoto(photoData));
-
-        resetComponentMessage();
+      e.preventDefault();
+  
+      const photoData = {
+        title: editTitle,
+        id: editId,
+      };
+  
+      dispatch(updatePhoto(photoData));
+  
+      resetComponentMessage();
     };
-
-
+  
     if (loading) {
-        return <p>Carregando...</p>
+      return <p>Carregando...</p>;
     }
+  
 
     return (
         <div id="profile">
