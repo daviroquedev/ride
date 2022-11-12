@@ -18,4 +18,4 @@ const PhotoPost = () => {
 }
 
 
-export default Photo;
+export default PhotoPost;
