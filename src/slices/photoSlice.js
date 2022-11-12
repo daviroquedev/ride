@@ -100,7 +100,7 @@ export const photoSlice = createSlice({
       .addCase(publishPhoto.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
-        state.photo = {};
+        state.photo = null;
       })
       .addCase(getUserPhotos.pending, (state) => {
         state.loading = true;
@@ -128,7 +128,7 @@ export const photoSlice = createSlice({
       .addCase(deletePhoto.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
-        state.photo = {};
+        state.photo = null;
       })
       .addCase(updatePhoto.pending, (state) => {
         state.loading = true;
@@ -145,7 +145,6 @@ export const photoSlice = createSlice({
           }
           return photo;
         });
-
         state.message = action.payload.message;
       })
       .addCase(updatePhoto.rejected, (state, action) => {
