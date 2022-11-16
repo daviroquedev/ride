@@ -7,6 +7,7 @@
   <li>TailwindCSS</li>
   <li>React Router Dom</li>
   <li>Auth, JWT functions</li>
+  <li>Redux</li>
   
   
 </ul>
