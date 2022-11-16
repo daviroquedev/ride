@@ -24,6 +24,7 @@
   <li>Tela Feed Dinamica</li>
   <li>Responsividade</li>
   <li>Enviar localização para o backend</li>
+  <li>Melhorar o codigo e CSS</li>
  
 </ul>
 
