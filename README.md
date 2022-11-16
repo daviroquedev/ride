@@ -7,20 +7,33 @@
   <li>TailwindCSS</li>
   <li>React Router Dom</li>
   <li>Auth, JWT functions</li>
+  <li>Redux</li>
   
   
 </ul>
 
+## Active functions OK
+<ul>
+  <li>Login e registro</li>
+  <li>Alterar dados cadastrais</li>
+  <li>Postar Fotos em Profile</li>
+</ul>
+
 ## Features
 <ul>
-  <li>Tela Feed</li>
+  <li>Tela Feed Dinamica</li>
   <li>Responsividade</li>
-  <li>Backend</li>
+  <li>Enviar localização para o backend</li>
+  <li>Melhorar o codigo e CSS</li>
+ 
 </ul>
 
 ## Link
 https://ridesocial.vercel.app/
 
+## Canva
+
+![verde simples modelo de negócios Pôster (1)](https://user-images.githubusercontent.com/101668192/202269698-66627a08-e9d7-4782-ab27-ea271a484433.png)
 
 
 ## Pra Rodar
