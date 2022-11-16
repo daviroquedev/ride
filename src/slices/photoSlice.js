@@ -75,18 +75,12 @@ export const updatePhoto = createAsyncThunk(
     return data;
   }
 );
+// Get photo
+export const getPhoto = createAsyncThunk("photo/getphoto", async (id) => {
+  const data = await photoService.getPhoto(id);
 
-// get photo by id
-export const getPhoto = createAsyncThunk(
-  "photo/getphoto",
-  async (id, thunkAPI) => {
-
-    const token = thunkAPI.getState().auth.user.token;
-    const data = await photoService.getPhoto(id);
-
-    return data;
-  });
-
+  return data;
+});
 
 export const photoSlice = createSlice({
   name: "publish",
@@ -169,6 +163,7 @@ export const photoSlice = createSlice({
         state.error = null;
       })
       .addCase(getPhoto.fulfilled, (state, action) => {
+        console.log(action.payload);
         state.loading = false;
         state.success = true;
         state.error = null;
