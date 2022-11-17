@@ -17,13 +17,15 @@ import { getPhoto } from "../slices/photoSlice"
 
 
 const PhotoPost = () => {
-    const { id } = useParams()
+    const { id } = useParams();
 
-    const dispatch = useDispatch()
-
+    const dispatch = useDispatch();
+  
+    const resetMessage = useResetComponentMessage(dispatch);
+  
     const { user } = useSelector((state) => state.auth);
     const { photo, loading, error, message } = useSelector(
-        (state) => state.photo
+      (state) => state.photo
     );
 
     //comentários
@@ -38,7 +40,7 @@ const PhotoPost = () => {
         return <p>Carregando..</p>
     }
 
-    return <div id="photo"><PhotoItem /></div>
+    return <div id="photo"><PhotoItem photo={photo}/></div>
 }
 
 

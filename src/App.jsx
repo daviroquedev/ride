@@ -4,13 +4,14 @@ import FeedPost from './screens/FeedPost'
 import Cadastro from './screens/Cadastro'
 import Home from './screens/Home'
 import Feed from './screens/Feed'
-
-//hooks
-import { useAuth } from './hooks/useAuth'
 import HeaderAll from './components/HeaderAll'
 import EditProfile from './screens/EditProfile'
 import Profile from './screens/Profile'
 import Photo from './screens/Photo'
+
+
+//hooks
+import { useAuth } from './hooks/useAuth'
 
 
 
