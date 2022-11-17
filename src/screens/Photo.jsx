@@ -1,4 +1,4 @@
-import "./PhotoPost.css"
+import "./Photo.css"
 
 import { uploads } from '../utils/config';
 
@@ -13,7 +13,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 
 //redux
-import { getPhoto } from "./../slices/photoSlice"
+import { getPhoto } from "../slices/photoSlice"
 
 
 const PhotoPost = () => {

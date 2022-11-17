@@ -10,7 +10,7 @@ import { useAuth } from './hooks/useAuth'
 import HeaderAll from './components/HeaderAll'
 import EditProfile from './screens/EditProfile'
 import Profile from './screens/Profile'
-import PhotoPost from './screens/PhotoPost'
+import Photo from './screens/Photo'
 
 
 
@@ -46,8 +46,7 @@ export default function App() {
         />
         <Route path="/feed" element={auth ? <Feed /> : <Navigate to="/" />}
         />
-         <Route path="/photos/:id" element={auth ? <PhotoPost/> : <Navigate to="/" />}
-        />
+        <Route path="photos/:id" element={<Photo />} />
 
       </Routes>
     </Router>
