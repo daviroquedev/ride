@@ -21,8 +21,6 @@ const PhotoPost = () => {
 
     const dispatch = useDispatch();
   
-    const resetMessage = useResetComponentMessage(dispatch);
-  
     const { user } = useSelector((state) => state.auth);
     const { photo, loading, error, message } = useSelector(
       (state) => state.photo
