@@ -1,4 +1,4 @@
-const link = 'https://backendridesocial.herokuapp.com'
+const link = 'https://backend-ride-production.up.railway.app/'
 export const api = `${link}/api`
 export const uploads = `${link}/uploads`
 
