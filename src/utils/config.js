@@ -1,4 +1,4 @@
-const link = 'https://backendridesocial2-production.up.railway.app'
+const link = 'https://backend-ride.onrender.com/'
 export const api = `${link}/api`
 export const uploads = `${link}/uploads`
 
